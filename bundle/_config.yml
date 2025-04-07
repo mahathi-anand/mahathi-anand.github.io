@@ -28,7 +28,7 @@ url: "https://mahathi-anand.github.io" # the base hostname & protocol for your s
 github_username:  "mahathi-anand"
 
 # Build settings
-theme: "minimal-mistakes-jekyll"  # Default Jekyll theme
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"  # Default Jekyll theme
 plugins:
   - jekyll-feed
   - jekyll-include-cache
