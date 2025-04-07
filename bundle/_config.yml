@@ -47,7 +47,7 @@ author:
 
 markdown: kramdown
 highlighter: rouge
-
+source: "./bundle"  
 
 
 # Exclude from processing.
