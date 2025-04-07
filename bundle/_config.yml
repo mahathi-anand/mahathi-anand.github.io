@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Dr. rer. nat. Mahathi Anand
-email: mahathi.anand@tum.de
+title: "Dr. rer. nat. Mahathi Anand"
+email: "mahathi.anand@tum.de"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Personal Portfolio/Website
@@ -43,7 +43,6 @@ author:
       and stability certificates for control systems, learning from demonstrations 
       for motion planning for robots, and explainability and robustness of AI"
       algorithms.
-
 
 
 markdown: kramdown
