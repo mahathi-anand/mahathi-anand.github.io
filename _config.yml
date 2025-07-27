@@ -1,1 +1,7 @@
+title: Mahathi Anand
+description: Personal site
+theme: minimal-mistakes-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 
