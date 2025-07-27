@@ -14,8 +14,9 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          ruby-version: '3.1.4'   # 👈️ Install specific Ruby version
+          bundler: none           # 👈️ Skip auto-install
+
 
       - name: Install dependencies
         run: bundle install
