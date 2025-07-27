@@ -2,10 +2,11 @@ name: Build and Deploy Jekyll Site
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,4 +18,20 @@ jobs:
         with:
           ruby-version: '3.1.4'
           bundler: none
+
+      - name: Install Bundler 2.7.1
+        run: gem install bundler -v 2.7.1
+
+      - name: Install dependencies
+        run: bundle _2.7.1_ install
+
+      - name: Build Jekyll site
+        run: bundle _2.7.1_ exec jekyll build
+
+      - name: Deploy to main branch root
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          directory: _site
 
