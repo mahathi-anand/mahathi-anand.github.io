@@ -6,33 +6,21 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
+      - name: Set up Ruby 3.2.2
         uses: ruby/setup-ruby@v1
         with:
-         ruby-version: '3.2.2'   # Use Ruby 3.2.2 or later
-         bundler: none
-
+          ruby-version: '3.2.2'
+          bundler: none
 
       - name: Install Bundler 2.7.1
         run: gem install bundler -v 2.7.1
 
-      - name: Install dependencies
-        run: bundle _2.7.1_ install
-
-      - name: Build Jekyll site
-        run: bundle _2.7.1_ exec jekyll build
-
-      - name: Deploy to main branch root
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          directory: _site
+      - name:
 
