@@ -28,11 +28,11 @@ jobs:
       - name: Build Jekyll site
         run: bundle _2.7.1_ exec jekyll build
 
-	- name: Deploy to main branch root
-	  uses: ad-m/github-push-action@v0.6.0
-	  with:
-	    github_token: ${{ secrets.PAT_TOKEN }}
-	    branch: main
-	    directory: _site
+      - name: Deploy to main branch root
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          branch: main
+          directory: _site
 
 
