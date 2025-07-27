@@ -1,4 +1,4 @@
-name: Build and Deploy Jekyll Site
+name: Build and Deploy Jekyll site
 
 on:
   push:
@@ -6,33 +6,29 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Ruby 3.2.2
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.2'
-          bundler: none
+          ruby-version: 3.2
 
-      - name: Install Bundler 2.7.1
-        run: gem install bundler -v 2.7.1
+      - name: Install Bundler and Gems
+        run: |
+          gem install bundler
+          bundle install
 
-      - name: Install dependencies
-        run: bundle _2.7.1_ install
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build
 
-      - name: Build Jekyll site
-        run: bundle _2.7.1_ exec jekyll build
-
-      - name: Deploy to main branch root
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          branch: main
-          directory: _site
-
+          publish_dir: ./_site
 
