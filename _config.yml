@@ -1,3 +1,5 @@
+@import "custom"; // This imports assets/css/_custom.scss or .css
+
 title: Mahathi Anand
 description: Personal site
 remote_theme: "mmistakes/minimal-mistakes"
@@ -33,6 +35,8 @@ defaults:
       layout: single
       sidebar:
         nav: main
+      style: custom
+	
 
 
 # Optional custom author name
