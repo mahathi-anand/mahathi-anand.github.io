@@ -36,7 +36,6 @@ defaults:
       type: "pages"
     values:
       layout: single
-
       
 # Optional custom author name
 author: Mahathi Anand
