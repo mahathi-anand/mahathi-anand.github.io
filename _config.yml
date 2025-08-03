@@ -27,9 +27,6 @@ header:
   show_subtitle: false
   actions: false
 
-sidebar:
- position: left
-
 defaults:
   -
     scope:
@@ -40,9 +37,7 @@ defaults:
       sidebar:
         nav: main
       style: custom
-	
-
-
+      
 # Optional custom author name
 author: Mahathi Anand
 
