@@ -26,6 +26,8 @@ header:
   show_title: false
   show_subtitle: false
   actions: false
+  
+nav: main  
 
 defaults:
   -
@@ -34,8 +36,7 @@ defaults:
       type: "pages"
     values:
       layout: single
-      sidebar:
-        nav: main
+
       
 # Optional custom author name
 author: Mahathi Anand
