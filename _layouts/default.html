@@ -1,19 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    nav ul { list-style: none; padding: 0; display: flex; gap: 1rem; background: #f5f5f5; padding: 1rem; border-radius: 8px; }
-    nav a { text-decoration: none; color: #333; font-weight: bold; }
-    nav a:hover { color: #007acc; }
+    /* Reset & base */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #007acc;
+    }
+
+    /* Sidebar */
+    nav.sidebar {
+      width: 220px;
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+    nav.sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav.sidebar li {
+      margin-bottom: 1rem;
+    }
+
+    /* Main content */
+    main.content {
+      margin-left: 220px; /* same width as sidebar */
+      padding: 2rem;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 1100;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
+    }
+
+    /* Responsive: Small screens */
+    @media (max-width: 768px) {
+      nav.sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        height: 100vh;
+      }
+      nav.sidebar.active {
+        transform: translateX(0);
+      }
+      main.content {
+        margin-left: 0;
+        padding: 1rem;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="sidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="sidebar" class="sidebar" role="navigation">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/biography/">Biography</a></li>
@@ -21,11 +110,40 @@
       <li><a href="/research/">Research</a></li>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/publications/">Publications</a></li>
-      <li><a href="/contact/">Contact</a></li>  
+      <li><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main class="content">
+    {{ content }}
+  </main>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      const isActive = sidebar.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isActive);
+    });
+  </script>
+  
+</body>
+</html>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/biography/">Biography</a></li>
+      <li><a href="/cv/">Curriculum Vitae</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
     {{ content }}
   </main>
 
