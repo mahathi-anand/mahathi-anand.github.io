@@ -20,9 +20,9 @@ exclude:
 
 # Use a skin to change default colors
 minimal_mistakes_skin: dark  # or try 'dark', 'air', 'contrast', etc.
-navigation: false
-sidebar:
-  position: left
+
+siderbar:
+ position: left
 
 defaults:
   -
