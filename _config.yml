@@ -1,6 +1,6 @@
 title: Mahathi Anand
 description: Personal site
-remote_theme: "mmistakes/minimal-mistakes"
+#remote_theme: "mmistakes/minimal-mistakes"
 
 plugins:
   - jekyll-feed
