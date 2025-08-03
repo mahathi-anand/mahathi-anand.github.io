@@ -27,3 +27,26 @@ defaults:
       layout: default
       author: Mahathi Anand
 
+#Layout Options
+# Enable sidebar navigation on left
+navigation:
+  - title: Home
+    url: /
+  - title: Biography
+    url: /biography/
+  - title: Curriculum Vitae
+    url: /cv/
+  - title: Research
+    url: /research/
+  - title: Projects
+    url: /projects/
+  - title: Publications
+    url: /publications/
+  - title: Contact
+    url: /contact/
+
+# Sidebar position
+sidebar:
+  position: left
+
+  
