@@ -7,4 +7,23 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
 
+#URL settings -set these if you want absolute URLS
+url: "https://mahathi-anand.github.io"  # Your live site URL
+baseurl: ""  # Leave blank if this is a user/organization page
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Optional: defaults for pages and posts (useful to avoid repeating front matter)
+defaults:
+  -
+    scope:
+      path: ""  # all files
+    values:
+      layout: default
+      author: Mahathi Anand
 
