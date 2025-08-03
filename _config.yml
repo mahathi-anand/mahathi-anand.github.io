@@ -1,15 +1,15 @@
 title: Mahathi Anand
 description: Personal site
 remote_theme: "mmistakes/minimal-mistakes"
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
 
-#URL settings -set these if you want absolute URLS
-url: "https://mahathi-anand.github.io"  # Your live site URL
-baseurl: ""  # Leave blank if this is a user/organization page
+url: "https://mahathi-anand.github.io"
+baseurl: ""
 
 exclude:
   - README.md
@@ -18,17 +18,10 @@ exclude:
   - node_modules
   - vendor
 
-# Optional: defaults for pages and posts (useful to avoid repeating front matter)
-defaults:
-  -
-    scope:
-      path: ""  # all files
-    values:
-      layout: default
-      author: Mahathi Anand
+# Use a skin to change default colors
+minimal_mistakes_skin: dark  # or try 'dark', 'air', 'contrast', etc.
 
-#Layout Options
-# Enable sidebar navigation on left
+# Navigation links shown in sidebar
 navigation:
   - title: Home
     url: /
@@ -45,8 +38,17 @@ navigation:
   - title: Contact
     url: /contact/
 
-# Sidebar position
-sidebar:
-  position: left
+# Enable sidebar navigation
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      sidebar:
+        nav: "main"
 
-  
+# Optional custom author name
+author: Mahathi Anand
+
