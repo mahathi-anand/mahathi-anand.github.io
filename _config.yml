@@ -21,7 +21,7 @@ exclude:
 # Use a skin to change default colors
 minimal_mistakes_skin: dark  # or try 'dark', 'air', 'contrast', etc.
 
-siderbar:
+sidebar:
  position: left
 
 defaults:
@@ -30,7 +30,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: splash
+      layout: single
       sidebar:
         nav: main
 
