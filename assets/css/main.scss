@@ -4,11 +4,6 @@ search: false
 ---
 
 @charset "utf-8";
-// assets/css/main.scss
 
-// Skin (must be at: _sass/minimal-mistakes/skins/_dark.scss)
-@import "minimal-mistakes/skins/dark";
-
-// Theme styles (must be at: _sass/minimal-mistakes/_index.scss or similar)
-@import "minimal-mistakes";
+@import "minimal-mistakes"; // main partials
 @import "custom"; // This imports assets/css/_custom.scss or .css
