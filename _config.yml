@@ -36,7 +36,6 @@ defaults:
       layout: single
       sidebar:
         nav: main
-      style: custom
       
 # Optional custom author name
 author: Mahathi Anand
