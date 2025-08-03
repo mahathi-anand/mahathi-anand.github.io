@@ -21,6 +21,12 @@ exclude:
 # Use a skin to change default colors
 minimal_mistakes_skin: dark  # or try 'dark', 'air', 'contrast', etc.
 
+header:
+  overlay: false
+  show_title: false
+  show_subtitle: false
+  actions: false
+
 sidebar:
  position: left
 
@@ -34,6 +40,8 @@ defaults:
       sidebar:
         nav: main
       style: custom
+	
+
 
 # Optional custom author name
 author: Mahathi Anand
