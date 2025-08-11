@@ -3,6 +3,8 @@ main:
     url: /
   - title: Biography
     url: /biography/
+  - title: Publications
+    url:
   - title: Curriculum Vitae
     url: /cv/
   - title: Contact
